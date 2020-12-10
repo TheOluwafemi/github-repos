@@ -1,0 +1,22 @@
+.btn {
+    border: none;
+    outline: none;
+    border-radius: 24px;
+    cursor: pointer;
+    padding: 0.7rem 1.5rem;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.btn--indigo {
+    background-color: $dark-indigo-900;
+    color: $color-white;
+}
