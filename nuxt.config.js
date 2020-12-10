@@ -19,9 +19,13 @@ export default {
             {
                 rel: 'stylesheet',
                 href:
-                    'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap',
+                    'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap',
             },
         ],
+    },
+
+    env: {
+        baseUrl: process.env.BASE_URL,
     },
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
