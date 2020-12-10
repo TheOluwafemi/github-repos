@@ -1,0 +1,27 @@
+.navigation {
+    @include flex($align: center, $justify: space-between);
+    width: 100%;
+    height: $navbar-height;
+    padding: 2rem 4rem;
+    background-color: $dark-blue-700;
+    color: $color-white;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.navigation__check {
+    display: none;
+}
+
+.navigation__title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+// media query for mobile screens
+@media only screen and (max-width: 425px) {
+    .navigation {
+        padding: 2rem 2rem;
+    }
+}

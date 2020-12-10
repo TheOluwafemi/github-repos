@@ -1,12 +1,13 @@
 <template>
-    <nav class="navigation">
-        <input id="nav__check" class="navigation__check" type="checkbox" />
-        <div class="navigation__header">
-            <div class="navigation__title">Git-Lookup</div>
+    <header class="header">
+        <div class="header__title">Welcome to Git-Lookup</div>
+        <div class="header__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+            tenetur aliquid laudantium debitis nam?
         </div>
 
         <div class="cta">
-            <button class="btn btn--indigo">Lookup User</button>
+            <button class="btn cta__button">Search User</button>
         </div>
-    </nav>
+    </header>
 </template>

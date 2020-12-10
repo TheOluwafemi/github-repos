@@ -1,5 +1,7 @@
 <template>
     <div>
+        <Navigation />
+        <Header />
         <Nuxt />
     </div>
 </template>

@@ -1,11 +1,11 @@
 .btn {
     border: none;
     outline: none;
-    border-radius: 24px;
+    border-radius: 4px;
     cursor: pointer;
-    padding: 0.7rem 1.5rem;
-    font-size: 14px;
-    font-weight: 900;
+    padding: 0.8rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -16,7 +16,7 @@
     }
 }
 
-.btn--indigo {
-    background-color: $dark-indigo-900;
-    color: $color-white;
+.btn--white {
+    color: $dark-indigo-900;
+    background-color: $color-white;
 }
