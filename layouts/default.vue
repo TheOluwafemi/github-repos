@@ -2,12 +2,15 @@
     <div>
         <Navigation />
         <Header />
-        <Nuxt />
+        <main>
+            <Nuxt />
+        </main>
+        <Footer />
     </div>
 </template>
 
 <style>
-html {
+/* html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
@@ -17,16 +20,16 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-}
-
+} */
+/*
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     margin: 0;
-}
+} */
 
-.button--green {
+/* .button--green {
     display: inline-block;
     border-radius: 4px;
     border: 1px solid #3b8070;
@@ -38,9 +41,9 @@ html {
 .button--green:hover {
     color: #fff;
     background-color: #3b8070;
-}
+} */
 
-.button--grey {
+/* .button--grey {
     display: inline-block;
     border-radius: 4px;
     border: 1px solid #35495e;
@@ -53,5 +56,5 @@ html {
 .button--grey:hover {
     color: #fff;
     background-color: #35495e;
-}
+} */
 </style>
