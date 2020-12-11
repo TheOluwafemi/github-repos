@@ -1,0 +1,8 @@
+.search {
+    @include flex($direction: column);
+    height: calc(100vh - (#{$footer-height} + #{$navbar-height}));
+}
+
+.search__form {
+    width: 40%;
+}

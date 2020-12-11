@@ -2,3 +2,18 @@ body {
     font-family: poppins;
     font-size: 14px;
 }
+
+.text__heading {
+    font-size: 28px;
+    color: $dark-indigo-900;
+}
+
+.text__subheading {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.link {
+    text-decoration: none;
+    color: $dark-indigo-900;
+}
