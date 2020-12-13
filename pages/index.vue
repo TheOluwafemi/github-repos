@@ -1,7 +1,9 @@
 <template>
     <main class="content">
-        <Profile :profile="userProfileDetails" />
-        <Repositories :repositories="topThreeRepos" />
+        <section class="content__home">
+            <Profile :profile="userProfileDetails" />
+            <Repositories :repositories="topThreeRepos" />
+        </section>
     </main>
 </template>
 
