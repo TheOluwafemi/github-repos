@@ -6,7 +6,7 @@
 
         <article class="profile__details1">
             <div class="profile__details2">
-                <p class="content__header content__header--small">
+                <p class="content__header content__header--sm">
                     {{ profile.name }}
                 </p>
                 <p class="content__text">{{ profile.bio }}</p>

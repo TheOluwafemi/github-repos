@@ -1,10 +1,13 @@
 <template>
-    <main class="content">
+    <section class="content">
         <section class="content__home">
             <Profile :profile="userProfileDetails" />
-            <Repositories :repositories="topThreeRepos" />
+            <Repositories
+                :repositories="topThreeRepos"
+                :header-text="topRepoHeader"
+            />
         </section>
-    </main>
+    </section>
 </template>
 
 <script>
@@ -25,6 +28,12 @@ export default {
         topThreeRepos() {
             return this.filterTopThreeRepos(this.userRepositories)
         },
+        topRepoHeader() {
+            return `${this.userProfileDetails.name}'s top repositories`
+        },
+    },
+    mounted() {
+        console.log(this.userRepositories)
     },
     methods: {
         filterTopThreeRepos(repos) {

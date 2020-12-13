@@ -1,0 +1,21 @@
+.repos {
+    padding: 2rem;
+    width: 100%;
+}
+
+.repos__header {
+    margin-bottom: 1rem;
+}
+
+.repos__group {
+    width: 100%;
+}
+
+.repo__item {
+    border-bottom: 1px solid $light-grey-400;
+    padding: 1.5rem 0;
+}
+
+.repo__item:last-child {
+    border-bottom: none;
+}

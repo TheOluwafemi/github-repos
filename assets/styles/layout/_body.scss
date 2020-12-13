@@ -3,6 +3,16 @@ body {
     font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+    color: $dark-indigo-900;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+}
+
 .text__heading {
     font-size: 28px;
     color: $dark-indigo-900;
@@ -11,9 +21,4 @@ body {
 .text__subheading {
     font-size: 14px;
     line-height: 1.8;
-}
-
-.link {
-    text-decoration: none;
-    color: $dark-indigo-900;
 }
