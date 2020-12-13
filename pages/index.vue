@@ -11,17 +11,15 @@
 </template>
 
 <script>
-import api from '@/utils/api.js'
-
 export default {
-    async asyncData() {
-        const predefinedUser = 'homeday-de' // set default user
-        const profileResponse = await api.getUser(predefinedUser)
-        const repoResponse = await api.getUserRepo(predefinedUser)
+    async asyncData({ $axios }) {
+        const defaultUser = 'homeday-de' // set default user
+        const userProfileDetails = await $axios.$get(`users/${defaultUser}`)
+        const userRepositories = await $axios.$get(`users/${defaultUser}/repos`)
         return {
-            userProfileDetails: profileResponse.data,
-            userRepositories: repoResponse.data,
-            defaultUser: predefinedUser,
+            userProfileDetails,
+            userRepositories,
+            defaultUser,
         }
     },
     computed: {
@@ -31,9 +29,6 @@ export default {
         topRepoHeader() {
             return `${this.userProfileDetails.name}'s top repositories`
         },
-    },
-    mounted() {
-        console.log(this.userRepositories)
     },
     methods: {
         filterTopThreeRepos(repos) {

@@ -62,8 +62,17 @@ export default {
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-    axios: {},
+    axios: {
+        baseURL: 'https://api.github.com',
+        retry: { retries: 1 },
+    },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},
+
+    loading: {
+        color: 'DodgerBlue',
+        height: '2px',
+        continuous: true,
+    },
 }
