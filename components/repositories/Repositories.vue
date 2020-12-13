@@ -1,13 +1,13 @@
 <template>
     <section>
-        <pre>{{ topThreeRepos }}</pre>
+        <pre>{{ repositories }}</pre>
     </section>
 </template>
 
 <script>
 export default {
     props: {
-        topThreeRepos: {
+        repositories: {
             type: Array,
             required: true,
             default: () => {},
