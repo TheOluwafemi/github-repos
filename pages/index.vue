@@ -1,7 +1,7 @@
 <template>
     <main class="content">
         <Profile :profile="userProfileDetails" />
-        <Repositories :top-three-repos="topThreeRepos" />
+        <Repositories :repositories="topThreeRepos" />
     </main>
 </template>
 
@@ -9,42 +9,27 @@
 import api from '@/utils/api.js'
 
 export default {
-    data() {
+    async asyncData() {
+        const predefinedUser = 'homeday-de' // set default user
+        const profileResponse = await api.getUser(predefinedUser)
+        const repoResponse = await api.getUserRepo(predefinedUser)
         return {
-            predefinedUser: 'homeday-de',
-            userProfileDetails: {},
-            topThreeRepos: [],
+            userProfileDetails: profileResponse.data,
+            userRepositories: repoResponse.data,
+            defaultUser: predefinedUser,
         }
     },
-    created() {
-        this.getPredefinedUserDetails()
-        this.getUserTopRepos()
+    computed: {
+        topThreeRepos() {
+            return this.filterTopThreeRepos(this.userRepositories)
+        },
     },
     methods: {
-        async getPredefinedUserDetails() {
-            try {
-                const response = await api.getUser(this.predefinedUser)
-                this.userProfileDetails = response.data
-            } catch (error) {
-                return { error }
-            }
-        },
-
-        async getUserTopRepos() {
-            try {
-                const response = await api.getUserRepo(this.predefinedUser)
-                const userRepositories = response.data
-                this.filterTopThreeRepos(userRepositories)
-            } catch (error) {
-                console.log(error)
-            }
-        },
-
         filterTopThreeRepos(repos) {
             const topThree = repos
                 .sort((a, b) => b.stargazers_count - a.stargazers_count)
                 .slice(0, 3)
-            this.topThreeRepos = this.extractRepoDetails(topThree)
+            return this.extractRepoDetails(topThree)
         },
 
         // filtering only repo details needed to be presented in the interface
