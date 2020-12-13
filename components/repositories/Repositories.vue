@@ -1,6 +1,6 @@
 <template>
     <section>
-        <pre>{{ repositories }}</pre>
+        <div>{{ repositories }}</div>
     </section>
 </template>
 
