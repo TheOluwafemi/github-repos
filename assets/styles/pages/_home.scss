@@ -1,5 +1,5 @@
 .content {
-    min-height: 100vh;
+    height: calc(100vh - (#{$footer-height} + #{$navbar-height}));
 }
 
 .home {
@@ -7,7 +7,7 @@
 }
 
 .content__home {
-    @include flex($align: flex-start, $justify: space-around);
+    @include flex($align: center, $justify: space-around);
     padding: 4rem;
 }
 
@@ -16,19 +16,32 @@
     font-weight: 500;
     color: $dark-indigo-900;
 }
-.content__header--big {
+.content__header--lg {
     font-size: 32px;
     font-weight: 700;
 }
-.content__header--medium {
+.content__header--md {
     font-size: 26px;
     font-weight: 700;
 }
-.content__header--small {
+.content__header--sm {
     font-size: 20px;
     font-weight: 700;
 }
-
 .content__text {
     line-height: 2.2;
+    color: $text-color-black;
+}
+
+.content__text--lg {
+    font-size: 18px;
+    font-weight: 500;
+    color: $dark-indigo-900;
+}
+
+.content__text--md {
+    font-size: 14px;
+}
+.content__text--sm {
+    font-size: 12px;
 }
