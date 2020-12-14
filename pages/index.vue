@@ -10,7 +10,7 @@
                 />
 
                 <div class="content__search">
-                    <p class="content__text content__text--lg">
+                    <p class="content__text content__text--lg mr--1">
                         Lookup another user
                     </p>
                     <button
