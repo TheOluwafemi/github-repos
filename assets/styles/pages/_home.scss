@@ -1,5 +1,5 @@
 .content {
-    height: 100%;
+    height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
 }
 
 .home {
@@ -109,7 +109,11 @@
     .content {
         height: 100%;
     }
-
+}
+@media only screen and (max-width: 768px) {
+    .content {
+        height: 100%;
+    }
     .content__right {
         flex: 0 0 90%;
         padding: 0rem;
