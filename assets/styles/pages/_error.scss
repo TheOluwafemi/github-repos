@@ -1,0 +1,14 @@
+.error__page {
+    @include flex($direction: column);
+    height: calc(100vh - (#{$navbar-height + #{$footer-height}}));
+    text-align: center;
+    padding: 1rem;
+}
+
+.error__header {
+    font-size: 44px;
+}
+
+.error__button {
+    width: auto;
+}

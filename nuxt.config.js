@@ -82,4 +82,8 @@ export default {
         height: '2px',
         continuous: true,
     },
+
+    generate: {
+        fallback: true,
+    },
 }
