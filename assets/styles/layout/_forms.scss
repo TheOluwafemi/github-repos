@@ -32,3 +32,9 @@
         border: 1px solid $tomato-red;
     }
 }
+
+.form__error {
+    margin-top: 0.5rem;
+    font-size: 12px;
+    color: $tomato-red;
+}
