@@ -1,12 +1,27 @@
 <template>
     <section class="content">
         <section class="content__home">
-            <Profile :profile="userProfileDetails" />
-            <Repositories
-                :repositories="topThreeRepos"
-                :owner="owner"
-                :header-text="topRepoHeader"
-            />
+            <Profile class="content__profile" :profile="userProfileDetails" />
+            <article class="content__right">
+                <Repositories
+                    :repositories="topThreeRepos"
+                    :owner="owner"
+                    :header-text="topRepoHeader"
+                />
+
+                <div class="content__search">
+                    <p class="content__text content__text--lg">
+                        Lookup another user
+                    </p>
+                    <button
+                        class="btn btn__search btn--dark"
+                        type="submit"
+                        @click.prevent="goToSearchPage"
+                    >
+                        Search User
+                    </button>
+                </div>
+            </article>
         </section>
     </section>
 </template>
@@ -61,6 +76,10 @@ export default {
                 }
             })
             return filteredRepos
+        },
+
+        goToSearchPage() {
+            this.$router.push('/search')
         },
     },
 }
