@@ -10,7 +10,7 @@
                 />
 
                 <div class="content__search">
-                    <p class="content__text content__text--lg">
+                    <p class="content__text content__text--lg mr--1">
                         Lookup another user
                     </p>
                     <button
@@ -28,14 +28,20 @@
 
 <script>
 export default {
-    async asyncData({ $axios }) {
-        const defaultUser = 'homeday-de' // set default user
-        const userProfileDetails = await $axios.$get(`users/${defaultUser}`)
-        const userRepositories = await $axios.$get(`users/${defaultUser}/repos`)
-        return {
-            userProfileDetails,
-            userRepositories,
-            defaultUser,
+    async asyncData({ $axios, error }) {
+        try {
+            const defaultUser = 'homeday-de' // set default user
+            const userProfileDetails = await $axios.$get(`users/${defaultUser}`)
+            const userRepositories = await $axios.$get(
+                `users/${defaultUser}/repos`
+            )
+            return {
+                userProfileDetails,
+                userRepositories,
+                defaultUser,
+            }
+        } catch (e) {
+            error({ statusCode: 404, message: 'Post not found' })
         }
     },
     computed: {

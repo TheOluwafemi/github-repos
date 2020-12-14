@@ -11,7 +11,12 @@ export default {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',
             },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content:
+                    'a simple app to find user gihub repositories and view some details of the repositories',
+            },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -81,5 +86,9 @@ export default {
         color: 'DodgerBlue',
         height: '2px',
         continuous: true,
+    },
+
+    generate: {
+        fallback: true,
     },
 }

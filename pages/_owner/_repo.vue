@@ -6,11 +6,15 @@
 
 <script>
 export default {
-    async asyncData({ $axios, params }) {
-        const { owner } = params
-        const { repo } = params
-        const repository = await $axios.$get(`repos/${owner}/${repo}`)
-        return { repository, owner, repo }
+    async asyncData({ $axios, params, error }) {
+        try {
+            const { owner } = params
+            const { repo } = params
+            const repository = await $axios.$get(`repos/${owner}/${repo}`)
+            return { repository, owner, repo }
+        } catch (e) {
+            error({ statusCode: 404, message: 'Post not found' })
+        }
     },
 
     computed: {
@@ -20,10 +24,6 @@ export default {
         // userRepos() {
         //     return this.extractRepoDetails(this.repositories)
         // },
-    },
-
-    mounted() {
-        console.log(typeof this.repositories)
     },
     methods: {
         // filtering only repo details needed to be presented in the interface
