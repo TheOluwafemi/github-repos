@@ -4,6 +4,7 @@
             <Profile :profile="userProfileDetails" />
             <Repositories
                 :repositories="topThreeRepos"
+                :owner="owner"
                 :header-text="topRepoHeader"
             />
         </section>
@@ -28,6 +29,9 @@ export default {
         },
         topRepoHeader() {
             return `${this.userProfileDetails.name}'s top repositories`
+        },
+        owner() {
+            return this.userProfileDetails.login
         },
     },
     methods: {

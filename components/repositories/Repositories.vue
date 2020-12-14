@@ -8,9 +8,13 @@
 
         <ul class="repo__group">
             <li v-for="repo in repositories" :key="repo.id" class="repo__item">
-                <a class="content__text content__text--lg" href="">{{
-                    repo.name
-                }}</a>
+                <nuxt-link
+                    class="content__text content__text--lg"
+                    :to="{
+                        path: `${owner}/${repo.name}`,
+                    }"
+                    >{{ repo.name }}</nuxt-link
+                >
                 <p class="content__text content__text--md">
                     {{ repo.description }}
                 </p>
@@ -29,6 +33,11 @@ export default {
             type: Array,
             required: true,
             default: () => {},
+        },
+        owner: {
+            type: String,
+            required: true,
+            default: () => '',
         },
         headerText: {
             type: String,
