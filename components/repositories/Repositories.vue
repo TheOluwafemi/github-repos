@@ -11,7 +11,7 @@
                 <nuxt-link
                     class="content__text content__text--lg"
                     :to="{
-                        path: `${owner}/${repo.name}`,
+                        path: `/${owner}/${repo.name}`,
                     }"
                     >{{ repo.name }}</nuxt-link
                 >
