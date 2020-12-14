@@ -7,7 +7,7 @@
 }
 
 .content__home {
-    @include flex($align: center, $justify: space-around);
+    @include flex($align: center, $justify: flex-start);
     padding: 4rem;
     flex-wrap: wrap;
 }
@@ -45,6 +45,15 @@
 }
 .content__text--sm {
     font-size: 12px;
+}
+
+.content__profile {
+    flex: 0 0 35%;
+}
+
+.content__right {
+    flex: 0 0 65%;
+    padding: 2rem;
 }
 
 .content__search {
@@ -93,10 +102,10 @@
 }
 
 .btn__search {
-    width: 100%;
+    width: 30%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     .content {
         height: 100%;
     }
@@ -106,8 +115,19 @@
         height: 100%;
     }
     .content__right {
-        width: 90%;
-        margin: 0 auto;
+        flex: 0 0 90%;
+        padding: 0rem;
+    }
+
+    .btn__search {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content__right {
+        flex: 0 0 90%;
+        padding: 0rem;
     }
 
     .btn__search {
@@ -116,6 +136,9 @@
 }
 
 @media only screen and (max-width: 425px) {
+    .content__home {
+        padding: 1rem;
+    }
     .content__profile {
         @include flex($align: center, $direction: column);
         width: 90%;
@@ -123,8 +146,8 @@
     }
 
     .content__right {
-        width: 100%;
-        margin: 0 auto;
+        flex: 0 0 100%;
+        padding: 0rem;
     }
     .btn__search {
         width: 100%;
