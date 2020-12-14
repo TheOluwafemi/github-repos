@@ -10,10 +10,14 @@
 
 <script>
 export default {
-    async asyncData({ $axios, params }) {
-        const { user } = params
-        const repos = await $axios.$get(`users/${user}/repos`)
-        return { repos, user }
+    async asyncData({ $axios, params, error }) {
+        try {
+            const { user } = params
+            const repos = await $axios.$get(`users/${user}/repos`)
+            return { repos, user }
+        } catch (e) {
+            error({ statusCode: 404, message: 'Post not found' })
+        }
     },
     computed: {
         headerText() {
