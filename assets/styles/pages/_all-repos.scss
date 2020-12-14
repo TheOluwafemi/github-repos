@@ -1,0 +1,26 @@
+.all__repos {
+    padding: 2rem;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .all__repos {
+        padding: 2rem;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .all__repos {
+        padding: 2rem;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .all__repos {
+        padding: 1rem;
+        width: 100%;
+    }
+}

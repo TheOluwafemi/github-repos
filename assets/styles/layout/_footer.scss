@@ -1,0 +1,11 @@
+.footer {
+    @include flex();
+    height: $footer-height;
+    color: $color-white;
+    background-color: $dark-blue-700;
+}
+
+.footer__link {
+    cursor: pointer;
+    color: $color-white;
+}

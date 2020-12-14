@@ -1,61 +1,86 @@
 <template>
-  <div class="container">
-    <div>
-      <Logos />
-      <h1 class="title">github-repos</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
-  </div>
+    <section class="content">
+        <section class="content__home">
+            <Profile class="content__profile" :profile="userProfileDetails" />
+            <article class="content__right">
+                <Repositories
+                    :repositories="topThreeRepos"
+                    :owner="owner"
+                    :header-text="topRepoHeader"
+                />
+
+                <div class="content__search">
+                    <p class="content__text content__text--lg">
+                        Lookup another user
+                    </p>
+                    <button
+                        class="btn btn__search btn--dark"
+                        type="submit"
+                        @click.prevent="goToSearchPage"
+                    >
+                        Search User
+                    </button>
+                </div>
+            </article>
+        </section>
+    </section>
 </template>
 
 <script>
-export default {}
+export default {
+    async asyncData({ $axios }) {
+        const defaultUser = 'homeday-de' // set default user
+        const userProfileDetails = await $axios.$get(`users/${defaultUser}`)
+        const userRepositories = await $axios.$get(`users/${defaultUser}/repos`)
+        return {
+            userProfileDetails,
+            userRepositories,
+            defaultUser,
+        }
+    },
+    computed: {
+        topThreeRepos() {
+            return this.filterTopThreeRepos(this.userRepositories)
+        },
+        topRepoHeader() {
+            return `${this.userProfileDetails.name}'s top repositories`
+        },
+        owner() {
+            return this.userProfileDetails.login
+        },
+    },
+    methods: {
+        filterTopThreeRepos(repos) {
+            const topThree = repos
+                .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                .slice(0, 3)
+            return this.extractRepoDetails(topThree)
+        },
+
+        // filtering only repo details needed to be presented in the interface
+        extractRepoDetails(repos) {
+            const filteredRepos = repos.map((repo) => {
+                return {
+                    id: repo.id,
+                    name: repo.name,
+                    fullName: repo.full_name,
+                    owner: repo.owner.login,
+                    url: repo.html_url,
+                    description: repo.description,
+                    createdAt: repo.created_at,
+                    lastUpdated: repo.updated_at,
+                    forks: repo.forks_count,
+                    hasIssues: repo.has_issues,
+                    open_issues: repo.open_issues_count,
+                    stars: repo.stargazers_count,
+                }
+            })
+            return filteredRepos
+        },
+
+        goToSearchPage() {
+            this.$router.push('/search')
+        },
+    },
+}
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

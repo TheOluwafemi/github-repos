@@ -1,0 +1,155 @@
+.content {
+    height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+}
+
+.home {
+    margin: 0 10rem;
+}
+
+.content__home {
+    @include flex($align: center, $justify: flex-start);
+    padding: 4rem;
+    flex-wrap: wrap;
+}
+
+.content__header {
+    line-height: 2;
+    font-weight: 500;
+    color: $dark-indigo-900;
+}
+.content__header--lg {
+    font-size: 32px;
+    font-weight: 700;
+}
+.content__header--md {
+    font-size: 26px;
+    font-weight: 700;
+}
+.content__header--sm {
+    font-size: 20px;
+    font-weight: 700;
+}
+.content__text {
+    line-height: 2.2;
+    color: $text-color-black;
+}
+
+.content__text--lg {
+    font-size: 18px;
+    font-weight: 500;
+    color: $dark-indigo-900;
+}
+
+.content__text--md {
+    font-size: 14px;
+}
+.content__text--sm {
+    font-size: 12px;
+}
+
+.content__profile {
+    flex: 0 0 35%;
+}
+
+.content__right {
+    flex: 0 0 65%;
+    padding: 2rem;
+}
+
+.content__search {
+    @include flex($align: center, $justify: space-between);
+    padding: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.content__header1 {
+    @include flex($direction: column, $align: flex-start);
+    min-height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+    width: 50%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    line-height: 2;
+}
+
+.content__header2 {
+    @include flex($justify: flex-start);
+    flex-wrap: wrap;
+}
+.content__header2:nth-child(n + 2) {
+    margin-right: 1rem;
+}
+
+.content__header3 {
+    line-height: 2;
+}
+
+.content__icon {
+    color: $text-color-grey;
+}
+
+.ml--1 {
+    margin-left: 1rem;
+}
+
+.content__thumbnail {
+    img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+.btn__search {
+    width: 30%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .content {
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .content {
+        height: 100%;
+    }
+    .content__right {
+        flex: 0 0 90%;
+        padding: 0rem;
+    }
+
+    .btn__search {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content__right {
+        flex: 0 0 90%;
+        padding: 0rem;
+    }
+
+    .btn__search {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .content__home {
+        padding: 1rem;
+    }
+    .content__profile {
+        @include flex($align: center, $direction: column);
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .content__right {
+        flex: 0 0 100%;
+        padding: 0rem;
+    }
+    .btn__search {
+        width: 100%;
+    }
+}

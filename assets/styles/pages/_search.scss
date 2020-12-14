@@ -1,0 +1,31 @@
+.search {
+    @include flex($direction: column);
+    height: calc(100vh - (#{$footer-height} + #{$navbar-height}));
+}
+
+.search__header {
+    text-align: center;
+}
+
+.search__form {
+    width: 30%;
+}
+
+@media only screen and (max-width: 768px) {
+    .search__form {
+        width: 60%;
+    }
+
+    .search__header {
+        max-width: 70%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .search__form {
+        width: 80%;
+    }
+
+    .search__header {
+        max-width: 90%;
+    }
+}

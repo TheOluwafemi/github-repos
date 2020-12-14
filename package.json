@@ -12,9 +12,18 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@nuxtjs/axios": "^5.12.3",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "node-sass": "^5.0.0",
+    "nuxt": "^2.14.6",
+    "nuxt-fontawesome": "^0.4.0",
+    "sass-loader": "^10.1.0",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
