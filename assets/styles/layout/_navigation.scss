@@ -3,7 +3,7 @@
     width: 100%;
     height: $navbar-height;
     padding: 2rem 4rem;
-    background-color: $dark-blue-700;
+    background-color: $color-white;
     color: $color-white;
     position: sticky;
     top: 0;
@@ -17,7 +17,7 @@
 .navigation__title {
     font-size: 20px;
     font-weight: 700;
-    color: $color-white;
+    color: $dark-blue-700;
 }
 
 // media query for mobile screens
