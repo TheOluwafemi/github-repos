@@ -15,7 +15,6 @@
 
 <script>
 export default {
-    layout: 'no-header',
     methods: {
         goToUser(user) {
             this.$router.push({ path: `/${user}/repos` })
