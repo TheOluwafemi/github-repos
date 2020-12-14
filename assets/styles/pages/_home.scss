@@ -1,5 +1,5 @@
 .content {
-    height: 100%;
+    min-height: 100vh;
 }
 
 .home {
@@ -7,8 +7,8 @@
 }
 
 .content__home {
-    @include flex($align: center, $justify: flex-start);
-    padding: 4rem;
+    @include flex($align: flex-start, $justify: flex-start);
+    padding: 2rem;
     flex-wrap: wrap;
 }
 
@@ -48,19 +48,23 @@
 }
 
 .content__profile {
-    flex: 0 0 35%;
+    flex: 0 0 25%;
 }
 
 .content__right {
-    flex: 0 0 65%;
+    flex: 0 0 70%;
     padding: 2rem;
 }
 
 .content__search {
-    @include flex($align: center, $justify: space-between);
+    @include flex($align: center, $justify: flex-start);
     padding: 2rem;
     width: 100%;
     flex-wrap: wrap;
+}
+
+.btn__search {
+    width: 30%;
 }
 
 .content__header1 {
@@ -92,6 +96,10 @@
     margin-left: 1rem;
 }
 
+.mr--1 {
+    margin-right: 1rem;
+}
+
 .content__thumbnail {
     img {
         vertical-align: middle;
@@ -101,18 +109,36 @@
     }
 }
 
-.btn__search {
-    width: 30%;
-}
-
 @media only screen and (max-width: 1024px) {
     .content {
         height: 100%;
     }
 
+    .btn__search {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .content {
+        height: 100%;
+    }
+
+    .content__home {
+        padding: 1rem;
+    }
+
+    .content__profile {
+        width: 100%;
+    }
     .content__right {
         flex: 0 0 90%;
         padding: 0rem;
+    }
+    .content__search {
+        @include flex($align: center, $justify: flex-start);
+        padding: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     .btn__search {
@@ -137,12 +163,11 @@
     }
     .content__profile {
         @include flex($align: center, $direction: column);
-        width: 90%;
         margin: 0 auto;
     }
 
     .content__right {
-        flex: 0 0 100%;
+        width: 100%;
         padding: 0rem;
     }
     .btn__search {

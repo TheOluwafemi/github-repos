@@ -21,10 +21,6 @@ export default {
         //     return this.extractRepoDetails(this.repositories)
         // },
     },
-
-    mounted() {
-        console.log(typeof this.repositories)
-    },
     methods: {
         // filtering only repo details needed to be presented in the interface
         // extractRepoDetails(repos) {
