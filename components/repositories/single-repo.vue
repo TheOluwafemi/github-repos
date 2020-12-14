@@ -5,7 +5,7 @@
                 <p class="content__header--lg">{{ repository.name }}</p>
             </div>
             <div class="content__header2">
-                <figure class="content__thumbnail">
+                <figure class="content__thumbnail mr--1">
                     <img
                         :src="repository.owner.avatar_url"
                         :alt="repository.owner.login"
@@ -44,13 +44,13 @@
             </div>
 
             <div class="content__header2">
-                <p class="content__text--md">
+                <p class="content__text--md mr--1">
                     Language: {{ repository.language }}
                 </p>
-                <p class="content__text--md ml--1">
+                <p class="content__text--md mr--1">
                     License: {{ repository.license.name }}
                 </p>
-                <p v-if="!repository.private" class="content__text--md ml--1">
+                <p v-if="!repository.private" class="content__text--md">
                     Public repo
                 </p>
             </div>
