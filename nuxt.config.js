@@ -54,7 +54,14 @@ export default {
                 imports: [
                     {
                         set: '@fortawesome/free-solid-svg-icons',
-                        icons: ['faStar'],
+                        icons: [
+                            'faStar',
+                            'faLock',
+                            'faLockOpen',
+                            'faLink',
+                            'faBuilding',
+                            'faHome',
+                        ],
                     },
                 ],
             },

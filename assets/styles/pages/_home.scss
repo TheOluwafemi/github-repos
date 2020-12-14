@@ -54,6 +54,44 @@
     flex-wrap: wrap;
 }
 
+.content__header1 {
+    @include flex($direction: column, $align: flex-start);
+    min-height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+    width: 50%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    line-height: 2;
+}
+
+.content__header2 {
+    @include flex($justify: flex-start);
+    flex-wrap: wrap;
+}
+.content__header2:nth-child(n + 2) {
+    margin-right: 1rem;
+}
+
+.content__header3 {
+    line-height: 2;
+}
+
+.content__icon {
+    color: $text-color-grey;
+}
+
+.ml--1 {
+    margin-left: 1rem;
+}
+
+.content__thumbnail {
+    img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
 .btn__search {
     width: 100%;
 }
