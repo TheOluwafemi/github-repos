@@ -15,9 +15,18 @@
 
 <script>
 export default {
+    data() {
+        return {
+            page: 1,
+            perPage: 10,
+        }
+    },
     methods: {
         goToUser(user) {
-            this.$router.push({ path: `/${user}/repos` })
+            this.$router.push({
+                path: `/${user}/repos`,
+                query: { perPage: `${this.perPage}`, page: `${this.page}` },
+            })
         },
     },
 }

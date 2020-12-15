@@ -19,3 +19,16 @@
 .repo__item:last-child {
     border-bottom: none;
 }
+
+.repo__pages {
+    @include flex();
+    width: 100%;
+
+    .btn {
+        margin: 1.5rem;
+    }
+
+    .info {
+        display: block;
+    }
+}

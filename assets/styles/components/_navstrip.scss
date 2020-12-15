@@ -1,0 +1,26 @@
+.nav2 {
+    @include flex($justify: space-between);
+    padding: 1rem 4rem;
+}
+
+.nav2__left {
+    cursor: pointer;
+}
+
+.nav2__right {
+    .btn {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav2 {
+        padding: 1rem 4rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .nav2 {
+        padding: 1rem 2rem;
+    }
+}

@@ -109,6 +109,15 @@
     }
 }
 
+.content__empty {
+    @include flex($direction: column);
+    height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+
+    .btn {
+        width: auto;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .content {
         height: 100%;
@@ -144,6 +153,11 @@
     .btn__search {
         width: 50%;
     }
+
+    .content__header1 {
+        width: 80%;
+        padding: 2rem 1rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -172,5 +186,10 @@
     }
     .btn__search {
         width: 100%;
+    }
+
+    .content__header1 {
+        width: 90%;
+        padding: 2rem 1rem;
     }
 }

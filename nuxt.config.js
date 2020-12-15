@@ -1,6 +1,9 @@
 export default {
     // Target (https://go.nuxtjs.dev/config-target)
     target: 'static',
+    generate: {
+        fallback: true,
+    },
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -66,6 +69,7 @@ export default {
                             'faLink',
                             'faBuilding',
                             'faHome',
+                            'faArrowLeft',
                         ],
                     },
                 ],
@@ -86,9 +90,5 @@ export default {
         color: 'DodgerBlue',
         height: '2px',
         continuous: true,
-    },
-
-    generate: {
-        fallback: true,
     },
 }
