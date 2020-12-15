@@ -88,5 +88,10 @@ export default {
             this.$router.push('/search')
         },
     },
+    head() {
+        return {
+            title: `Home`,
+        }
+    },
 }
 </script>

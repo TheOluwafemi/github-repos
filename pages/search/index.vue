@@ -29,5 +29,10 @@ export default {
             })
         },
     },
+    head() {
+        return {
+            title: `Search User`,
+        }
+    },
 }
 </script>
