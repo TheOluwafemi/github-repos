@@ -5,7 +5,7 @@
                 <p class="content__header--lg">{{ repository.name }}</p>
             </div>
             <div class="content__header2">
-                <figure class="content__thumbnail">
+                <figure class="content__thumbnail mr--1">
                     <img
                         :src="repository.owner.avatar_url"
                         :alt="repository.owner.login"

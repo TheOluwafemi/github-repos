@@ -66,6 +66,7 @@ export default {
                             'faLink',
                             'faBuilding',
                             'faHome',
+                            'faArrowLeft',
                         ],
                     },
                 ],
