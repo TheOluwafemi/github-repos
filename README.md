@@ -6,6 +6,9 @@ The homepage is loaded with a predefined users, and you can view repositories fo
 
 The app is server-rendered and hosted on netlify.
 
+![search](https://github.com/theoluwafemi/github-repos/blob/develop/screenshot/Screenshot.png?raw=true)
+
+
 ## Build Setup
 
 ```bash
