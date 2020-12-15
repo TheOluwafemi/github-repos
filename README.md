@@ -1,4 +1,10 @@
-# github-repos
+# git-lookup
+
+git-lookup is a simple nuxt app, to lookup git repositories for specified users. :sunglasses:
+
+The homepage is loaded with a predefined users, and you can view repositories for other users simply by clicking on the search button
+
+The app is server-rendered and hosted on netlify.
 
 ## Build Setup
 
