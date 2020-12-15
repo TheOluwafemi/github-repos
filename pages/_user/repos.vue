@@ -1,20 +1,60 @@
 <template>
-    <section class="all__repos">
-        <Repositories
-            :repositories="filteredRepos"
-            :owner="user"
-            :header-text="headerText"
-        />
+    <section>
+        <article v-if="repos.length">
+            <Repositories
+                :repositories="filteredRepos"
+                :owner="user"
+                :header-text="headerText"
+            />
+
+            <div class="repo__pages">
+                <button
+                    v-if="showPrevButton"
+                    class="btn btn--dark btn--auto"
+                    @click.prevent="previousPage"
+                >
+                    Prev
+                </button>
+                <button
+                    class="btn btn--dark btn--auto"
+                    @click.prevent="nextPage"
+                >
+                    Next
+                </button>
+
+                <div class="info">
+                    <p v-if="$fetchState.pending">Fetching repos...</p>
+                    <p v-else-if="$fetchState.error">An error occurred :(</p>
+                </div>
+            </div>
+        </article>
+
+        <article v-else class="content__empty">
+            <p>Nothing to see here</p>
+            <button class="btn btn--dark" @click.prevent="previousPage">
+                Go back
+            </button>
+        </article>
     </section>
 </template>
 
 <script>
 export default {
-    async asyncData({ $axios, params, error }) {
+    async fetch() {
+        this.repos = await this.$axios.$get(
+            `users/${this.user}/repos?per_page=${this.perPage}&page=${this.page}`
+        )
+    },
+    async asyncData({ $axios, params, error, query }) {
         try {
             const { user } = params
-            const repos = await $axios.$get(`users/${user}/repos`)
-            return { repos, user }
+            const { perPage } = query || 10
+            const { page } = query || 1
+            const repos = await $axios.$get(
+                `users/${user}/repos?per_page=${perPage}&page=${page}`
+            )
+
+            return { repos, user, perPage, page }
         } catch (e) {
             error({ statusCode: 404, message: 'Post not found' })
         }
@@ -25,6 +65,10 @@ export default {
         },
         filteredRepos() {
             return this.extractRepoDetails(this.repos)
+        },
+
+        showPrevButton() {
+            return this.page !== 1
         },
     },
     methods: {
@@ -47,6 +91,28 @@ export default {
                 }
             })
             return filteredRepos
+        },
+
+        goToSearchPage() {
+            this.$router.push('/search')
+        },
+
+        nextPage() {
+            this.page++
+            this.$router.push({
+                path: `/${this.user}/repos`,
+                query: { perPage: `${this.perPage}`, page: `${this.page}` },
+            })
+            this.$fetch()
+        },
+
+        previousPage() {
+            this.page--
+            this.$router.push({
+                path: `/${this.user}/repos`,
+                query: { perPage: `${this.perPage}`, page: `${this.page}` },
+            })
+            this.$fetch()
         },
     },
 }

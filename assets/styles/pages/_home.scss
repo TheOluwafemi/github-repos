@@ -109,6 +109,15 @@
     }
 }
 
+.content__empty {
+    @include flex($direction: column);
+    height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+
+    .btn {
+        width: auto;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .content {
         height: 100%;

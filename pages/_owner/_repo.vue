@@ -1,6 +1,15 @@
 <template>
     <section class="repo">
-        <SingleRepo :repository="repository" />
+        <article v-if="repository">
+            <SingleRepo :repository="repository" />
+        </article>
+
+        <article v-else class="content__empty">
+            <p>Nothing to see here</p>
+            <button class="btn btn--dark" @click.prevent="goToSearchPage">
+                Search again
+            </button>
+        </article>
     </section>
 </template>
 
