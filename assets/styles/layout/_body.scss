@@ -22,3 +22,43 @@ ul {
     font-size: 14px;
     line-height: 1.8;
 }
+
+// .page-enter-active,
+// .page-leave-active {
+//     transition: opacity 0.5s;
+// }
+
+// .page-enter,
+// .page-leave-active {
+//     opacity: 0;
+// }
+
+.page-enter-active {
+    transform-origin: top;
+    animation: bounce-in 0.8s;
+}
+.page-leave-active {
+    transform-origin: top;
+    animation: bounce-out 0.5s;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes bounce-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
