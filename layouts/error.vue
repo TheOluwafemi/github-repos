@@ -48,5 +48,10 @@ export default {
             this.$router.push('/')
         },
     },
+    head() {
+        return {
+            title: `Error`,
+        }
+    },
 }
 </script>

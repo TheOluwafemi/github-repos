@@ -115,5 +115,10 @@ export default {
             this.$fetch()
         },
     },
+    head() {
+        return {
+            title: `${this.user}'s repositories`,
+        }
+    },
 }
 </script>
