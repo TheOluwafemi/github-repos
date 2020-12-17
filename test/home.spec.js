@@ -39,14 +39,6 @@ describe('Home component', () => {
     })
 
     describe('computed properties', () => {
-        // test('topThreeRepos', () => {
-        //     wrapper.setData({
-        //         userRepositories: userRepos,
-        //     })
-        //     wrapper.vm.filterTopThreeRepos = jest.fn()
-        //     expect(wrapper.vm.filterTopThreeRepos).toHaveBeenCalled()
-        // })
-
         test('owner', () => {
             expect(typeof wrapper.vm.userProfileDetails).toBe('object')
             expect(wrapper.vm.owner).toBe(undefined)
@@ -70,7 +62,6 @@ describe('Home component', () => {
                 userRepositories: userRepos,
             })
             wrapper.vm.filterTopThreeRepos(userRepos)
-            // expect(wrapper.vm.filterTopThreeRepos(userRepos)).toHaveBeenCalled()
         })
         test('goToSearch', () => {
             const spy = jest.fn()
