@@ -8,6 +8,13 @@ The app is server-rendered and hosted on netlify.
 
 ![search](https://github.com/theoluwafemi/github-repos/blob/develop/screenshot/Screenshot.png?raw=true)
 
+### setup this project locally 
+In your local projects folder clone this repo 
+```bash
+# clone repository using https
+$ git clone https://github.com/TheOluwafemi/github-repos.git
+```
+
 
 ## Build Setup
 
@@ -15,12 +22,15 @@ The app is server-rendered and hosted on netlify.
 # install dependencies
 $ yarn install
 
+
 # serve with hot reload at localhost:3000
 $ yarn dev
+
 
 # build for production and launch server
 $ yarn build
 $ yarn start
+
 
 # generate static project
 $ yarn generate
