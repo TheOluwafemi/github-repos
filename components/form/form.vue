@@ -82,7 +82,7 @@
 
             <div class="form__button">
                 <button
-                    class="btn btn--dark"
+                    class="btn btn--dark btn__submit"
                     type="submit"
                     :disabled="$v.$invalid"
                 >
@@ -96,6 +96,7 @@
 <script>
 import { required, email, sameAs } from 'vuelidate/lib/validators'
 export default {
+    name: 'Form',
     data() {
         return {
             usernameField: '',

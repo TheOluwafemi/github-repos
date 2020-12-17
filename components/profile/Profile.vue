@@ -30,6 +30,7 @@
 
 <script>
 export default {
+    name: 'Profile',
     props: {
         profile: {
             type: Object,
