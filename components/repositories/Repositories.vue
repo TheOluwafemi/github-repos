@@ -15,7 +15,7 @@
                     }"
                     >{{ repo.name }}</nuxt-link
                 >
-                <p class="content__text content__text--md">
+                <p id="content__desc" class="content__text content__text--md">
                     {{ repo.description }}
                 </p>
                 <span class="content__text content__text--sm"
@@ -28,6 +28,7 @@
 
 <script>
 export default {
+    name: 'Repositories',
     props: {
         repositories: {
             type: Array,
