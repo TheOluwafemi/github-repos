@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import Repositories from '@/components/repositories/repositories.vue'
 import userRepos from './mock/userRepositories.json'
 
-describe('Profile component', () => {
+describe('Repositories component', () => {
     test('check props type and default value', () => {
         const wrapper = mount(Repositories, {
             propsData: {
